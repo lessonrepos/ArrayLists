@@ -13,9 +13,9 @@ public class Main {
 		System.out.println("**** TEST 1A: REVERSE ****");
 		System.out.println("INPUT:  " + test1);
 		ArrayList<Integer> result = methods.reverseArray(test1);
+		System.out.println("OUTPUT: " + result);
 		resetArray(test1, 1);
 		System.out.println("Passed?: " + checkReverse(test1, result));
-		System.out.println("OUTPUT: " + result);
 		if(!checkReverse(test1, result)) {
 			System.out.println("CORRECT OUTPUT: [8, 5, 5, 4, 9, 1, 3, 5]");
 		}
@@ -25,9 +25,9 @@ public class Main {
 		System.out.println("**** TEST 1B: REVERSE ****");
 		System.out.println("INPUT:  " + test2);
 		result = methods.reverseArray(test2);
+		System.out.println("OUTPUT: " + result);
 		resetArray(test2, 2);
 		System.out.println("Passed?: " + checkReverse(test2, result));
-		System.out.println("OUTPUT: " + result);
 		if(!checkReverse(test2, result)) {
 			System.out.println("CORRECT OUTPUT: [4, 9, 7, 1, 7, 1]");
 		}
@@ -38,8 +38,8 @@ public class Main {
 		System.out.println("GOAL: Clear all 5's");
 		System.out.println("INPUT:  " + test1);
 		result = methods.clearAllNums(test1, 5);
-		System.out.println("Passed?: " + checkClear(result, 1));
 		System.out.println("OUTPUT: " + result);
+		System.out.println("Passed?: " + checkClear(result, 1));
 		if(!checkClear(result, 1)) {
 			System.out.println("CORRECT OUTPUT: [3, 1, 9, 4, 8]");
 		}
@@ -50,8 +50,8 @@ public class Main {
 		System.out.println("GOAL: Clear all 1's");
 		System.out.println("INPUT:  " + test2);
 		result = methods.clearAllNums(test2, 1);
-		System.out.println("Passed?: " + checkClear(result, 2));
 		System.out.println("OUTPUT: " + result);
+		System.out.println("Passed?: " + checkClear(result, 2));
 		if(!checkClear(result, 2)) {
 			System.out.println("CORRECT OUTPUT: [7, 7, 9, 4]");
 		}
@@ -61,8 +61,8 @@ public class Main {
 		System.out.println("**** TEST 3A: FIND MODE ****");
 		System.out.println("INPUT:  " + test1);
 		int mode = methods.findMode(test1);	
-		System.out.println("Passed?: " + (mode == 5));
 		System.out.println("OUTPUT: " + mode);
+		System.out.println("Passed?: " + (mode == 5));
 		if(mode!=5) {
 			System.out.println("CORRECT OUTPUT: 5");
 		}
@@ -72,8 +72,8 @@ public class Main {
 		System.out.println("**** TEST 3B: FIND MODE ****");
 		System.out.println("INPUT:  " + test2);
 		mode = methods.findMode(test2);	
-		System.out.println("Passed?: " + (mode == 1));
 		System.out.println("OUTPUT: " + mode);
+		System.out.println("Passed?: " + (mode == 1));
 		if(mode!=1) {
 			System.out.println("CORRECT OUTPUT: 1");
 		}
@@ -83,8 +83,8 @@ public class Main {
 		System.out.println("**** TEST 4A: SORT ****");
 		System.out.println("INPUT:  " + test1);
 		result = methods.sortArray(test1);
-		System.out.println("Passed?: " + checkSort(result, 1));
 		System.out.println("OUTPUT: " + result);
+		System.out.println("Passed?: " + checkSort(result, 1));
 		if(!checkClear(result, 2)) {
 			System.out.println("CORRECT OUTPUT: [1, 3, 5, 5, 5, 8, 9]");
 		}
@@ -94,8 +94,8 @@ public class Main {
 		System.out.println("**** TEST 4B: SORT ****");
 		System.out.println("INPUT:  " + test2);
 		result = methods.sortArray(test2);
-		System.out.println("Passed?: " + checkSort(result, 2));
 		System.out.println("OUTPUT: " + result);
+		System.out.println("Passed?: " + checkSort(result, 2));
 		if(!checkClear(result, 2)) {
 			System.out.println("CORRECT OUTPUT: [1, 1, 4, 7, 7, 9]");
 		}
@@ -182,7 +182,7 @@ public class Main {
 		else if(choice == 2) {
 			int[] correct = {7,7,9,4};
 			int j = 0;
-			if(array.size() == 5) {
+			if(array.size() == 4) {
 				for(Integer i: array) {
 					if(i.intValue() == correct[j]) {
 						j++;
@@ -201,8 +201,8 @@ public class Main {
 	private static boolean checkReverse(ArrayList<Integer> array, ArrayList<Integer> reversed) {
 			int j =0;
 			if(array.size() == reversed.size()) {
-				for(int i = array.size()-1; i>=0; i--) {
-					if(!array.get(i).equals(reversed.get(j)))
+				for(int num: array) {
+					if(num != (reversed.get(j)))
 						return false;
 					else
 						j++;

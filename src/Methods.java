@@ -9,11 +9,8 @@ public class Methods {
 	 * @param arr
 	 * @return
 	 */
-	public ArrayList<Integer> reverseArray(ArrayList<Integer> arr){
-		ArrayList<Integer> reversedArr = new ArrayList<Integer>();
-		//write code to reverse array here
-		
-		return reversedArr;
+	public ArrayList<Integer> reverseArray(ArrayList<Integer> arr){	
+		return arr;
 	}
 	
 	/**
